@@ -43,6 +43,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
+
 // Carlous Images //
 
  document.addEventListener('DOMContentLoaded', function() {
@@ -70,13 +72,6 @@ document.addEventListener('DOMContentLoaded', function() {
     carouselInterval = setInterval(nextImage, intervalTime);
   });
 });
-
-
-
-
-
-
-
 
 
 
