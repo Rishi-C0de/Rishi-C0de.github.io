@@ -55,7 +55,7 @@ header {
     width: 30px;
     height: 21px;
     background: transparent;
-    border: none;
+    border-radius: 2px orange;
     cursor: pointer;
     padding: 0;
     z-index: 1001;
@@ -82,10 +82,14 @@ header {
     transition: all 0.3s ease;
     padding: 0.5rem 0;
     position: relative;
+    
 }
 
 .nav-menu a:hover {
     color: orange;
+    border-color: orange;
+    
+
 }
 
 .nav-menu a::after {
@@ -115,14 +119,14 @@ header {
         right: -100%;
         width: 70%;
         height: 100vh;
-        background-color: #161616;
+        background-color: transparent;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 2rem;
         transition: all 0.5s ease;
         padding-top: 80px;
-        border-left: 3px solid orange;
+        border-left: 2px white;
     }
     
     .nav-menu.active {
@@ -609,26 +613,26 @@ header {
 
 
 /* EXPERIENCE SECTION */
+/* Experience Section */
+/* Experience Section */
 .experience {
   background-color: #000;
-  padding: 80px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  padding: 60px 20px;
 }
 
-/* Shared Section Title Style */
 .section-title {
-  font-size: 36px;
+  font-size: 2rem;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 2px;
-  padding-bottom: 15px;
-  position: relative;
-  width: 80%;
-  margin: 30px auto 25px auto;
+  margin-bottom: 2rem;
   color: #fff;
+  position: relative;
+  padding-bottom: 15px;
+  width: 80%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .section-title span {
@@ -645,90 +649,184 @@ header {
   left: 0;
 }
 
-/* Experience cards container */
 .exp-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-  max-width: 1100px;
+  display: grid;
+  grid-template-columns: 1fr; /* Single column by default (mobile) */
+  gap: 15px;
+  max-width: 1000px;
   width: 100%;
   margin: 0 auto;
+  align-items: center;
 }
 
-/* Individual experience cards */
 .exp-box {
   background-color: #222;
-  border-radius: 10px;
-  padding: 1.5rem;
-  max-width: 350px;
-  width: 100%;
+  border-radius: 6px;
+  padding: 15px;
   color: #fff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.exp-box-row2 {
+  grid-column: span 1;
+}
+
+.exp-box-special {
+  position: relative;
+}
+
+.exp-container::after {
+  content: '';
+  grid-column: 1 / -1;
+  height: 0;
 }
 
 .exp-box:hover {
-  transform: scale(1.03) translateY(-5px);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 3px 10px rgba(250, 142, 4, 0.1);
+}
+
+.exp-date {
+  font-size: 0.8rem;
+  color: #aaa;
+  margin-bottom: 3px;
+}
+
+.exp-position {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #fff;
+  transition: color 0.3s ease;
 }
 
 .exp-box:hover .exp-position {
   color: #fa8e04;
 }
 
-.exp-date {
-  font-weight: bold;
-  color: gray;
-  margin-bottom: 5px;
-}
-
-.exp-position {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin: 0.5rem 0;
-  transition: color 0.3s;
+.exp-content {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-bottom: 1px;
+  flex-grow: 1;
 }
 
 .exp-location {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   color: #ccc;
+  margin-top: 0;
 }
 
+.exp-read-more {
+  background: transparent;
+  color:  #ff8c00;
+  border: 1px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
 
+.exp-read-more:hover {
+  background: #ff8c00;
+  color:black;
+  border-radius: green;
+  border: #ff8c00;
+}
 
+/* Modal styles */
+.exp-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .skills-grid,
-  .interest-grid-alt,
+.exp-modal-content {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  color: #fff;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-modal:hover {
+  color: #fa8e04;
+}
+
+.modal-body {
+  padding: 20px 10px;
+}
+
+.modal-body h3 {
+  color: #fa8e04;
+  margin-bottom: 15px;
+}
+
+.modal-body p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+/* Desktop layout - applies only on larger screens */
+@media (min-width: 768px) {
   .exp-container {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: repeat(6, 1fr); /* Create 6 columns for precise control */
   }
-
-  .skill-icon,
-  .interest-icon {
-    font-size: 40px;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
+  
+  /* First row - 3 boxes */
+  .exp-box:not(.exp-box-row2) {
+    grid-column: span 2; /* Each takes 2 of 6 columns */
   }
-}
-
-@media (max-width: 600px) {
-  .exp-box {
-    max-width: 100%;
+  
+  /* Second row - 2 centered boxes */
+  .exp-box-row2:nth-child(4) {
+    grid-column: 2 / span 2; /* Starts at column 2, spans 2 columns */
   }
-
-  .section-title {
-    width: 90%;
+  
+  .exp-box-row2:nth-child(5) {
+    grid-column: 4 / span 2; /* Starts at column 4, spans 2 columns */
   }
 }
 
+/* For the wide box (last one) */
+.exp-box-wide {
+  grid-column: 1 / -1; /* Takes full width on mobile */
+}
 
-
+@media (min-width: 768px) {
+  .exp-box-wide {
+    grid-column: span 6; /* Takes full width (6 columns) on desktop */
+  }
+}
 
 
 
