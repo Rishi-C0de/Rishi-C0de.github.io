@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap">
     <link rel="stylesheet" href="portfolio.css">
-    <script href="portfolio.js"></script>
+    <script src="portfolio.js"></script>
     <title>Portfolio Website</title>
 </head>
 <body>
@@ -97,10 +97,6 @@
     </div>
   </div>
 </section>
-
-
-
-   
    
 
 
@@ -148,10 +144,6 @@
 
   </div>
 </section>
-
-
-
-
 
 
 
@@ -218,9 +210,6 @@
 
 
 
-
-
-
 <!-- My Experience Section -->
 <!-- My Experience Section -->
 <section class="experience" id="experience">
@@ -229,58 +218,38 @@
     
     <div class="exp-box">
       <div class="exp-date">2012 – 2018</div>
-      <div class="exp-position">School Experience</div>
-      <p>Attended school in Arghakhanchi, Nepal, where I built a strong academic foundation and discovered my early interest in technology and computers.</p>
+      <h3 class="exp-position">School Experience</h3>
+      <p class="exp-content">Experienced a school journey filled with curiosity, competitions, new friendships, personal growth, love for technology, memorable moments, and challenges that shaped my student life.</p>
       <div class="exp-location">📍 Chandrauta, Kapilvastu, Nepal</div>
+      <button class="exp-read-more">Read Full Experience</button>
     </div>
 
     <div class="exp-box">
       <div class="exp-date">2019 – 2021</div>
-      <div class="exp-position">High School Experience</div>
-      <p>Studied science in high school with a focus on math and computer science, gaining deeper knowledge in programming, logic, and networks.</p>
+      <h3 class="exp-position">High School Experience</h3>
+      <p class="exp-content">Entered high school passionate about tech, felt lonely without old friends but focused on studies and topped the class. Gradually made friends, helped juniors, and ended up enjoying the journey.</p>
       <div class="exp-location">📍 Chandrauta, Kapilvastu, Nepal</div>
+      <button class="exp-read-more">Read Full Experience</button>
     </div>
 
     <div class="exp-box">
       <div class="exp-date">2021 – 2024</div>
-      <div class="exp-position">Cybersecurity Enthusiast</div>
-      <p>Developed a strong interest in cybersecurity through online courses, ethical hacking tutorials, and real-world practice on platforms like TryHackMe.</p>
+      <h3 class="exp-position">Cybersecurity Enthusiast</h3>
+      <p class="exp-content">My passion for cybersecurity began in childhood after watching <i>Mr. Robot</i>, which led me to explore hacking, study Computer Science, build projects, and aim to become a cybersecurity analyst and start a cyber bureau in Nepal.</p>
       <div class="exp-location">🌐 Online</div>
+      <button class="exp-read-more">Read Full Experience</button>
     </div>
 
-    <div class="exp-box">
-      <div class="exp-date">2024 – 2025</div>
-      <div class="exp-position">Research for US Studies</div>
-      <p>Researched the US education system, scholarships, and universities offering Computer Science programs in English with full/partial funding options.</p>
-      <div class="exp-location">📍 Nepal</div>
-    </div>
-
-    <div class="exp-box">
+    <div class="exp-box exp-box-wide">
       <div class="exp-date">2025</div>
-      <div class="exp-position">US Interview Experience</div>
-      <p>I had my US visa interview scheduled for 2:00 PM on March 18 at the US Embassy in Kathmandu, but I arrived early with two friends. 
-        After leaving my phone and bag with them, I entered the embassy around 12:15 PM. While waiting in line, I met a few other students—some were nervous 
-        due to low scores and long academic gaps. I wasn’t too anxious, but during biometric, my sweaty hands caused a slight delay, which annoyed the officer. 
-        Still, I moved forward with confidence.<br>
-
-My interview was at counter 7. The officer asked me about my major, and I answered confidently: Computer Science 
-with a focus on cybersecurity. I explained how my interest began in grade 10 when my Facebook account was hacked and 
-how cybercrime has been rising rapidly. I mentioned my skills with the Rubik's cube and briefly described my high school studies
- in programming languages like C, Java, PHP, and database. When asked about my sponsor, I answered sincerely, 
- but a slight slip in wording may have caused confusion. The officer looked at my DS-160, pulled out a yellow slip, and 
- said, "Sorry, I cannot approve your visa this time." I calmly asked for the reason, and he replied, "Try next time."<br>
-
-Walking out with that yellow slip was heartbreaking. My friends were waiting outside, hopeful like me, 
-but I had to break the news. Despite all my preparation, it felt like everything collapsed in a moment. 
-That day, approvals seemed rare, and I realized how uncertain the process can be. Still, 
-I believe rejection is not the end—just a redirection. For many, the U.S. is a dream. For some, a responsibility. 
-For me, it’s both—and I will try again.<div class="exp-location">📍 US Embassy, Kathmandu</div>
+      <h3 class="exp-position">US Interview Experience</h3>
+      <p class="exp-content">Had my US visa interview at the US Embassy in Kathmandu. Despite thorough preparation, my application was denied. This experience taught me resilience and the importance of perseverance in the face of setbacks.</p>
+      <div class="exp-location">📍 US Embassy, Kathmandu</div>
+      <button class="exp-read-more">Read Full Experience</button>
     </div>
 
   </div>
 </section>
-
-
 
 
 
@@ -296,7 +265,7 @@ For me, it’s both—and I will try again.<div class="exp-location">📍 US Emb
         <img src="pic.jpg" alt="Slide 3" class="carousel-img">
         <img src="pic3.jpg" alt="Slide 4" class="carousel-img">
         <img src="pic5.jpg" alt="Slide 5" class="carousel-img">
-         <img src="pic6.jpg" alt="Slide 6" class="carousel-img">
+        <img src="pic6.jpg" alt="Slide 5" class="carousel-img">
       </div>
     </div>
 
@@ -329,56 +298,8 @@ For me, it’s both—and I will try again.<div class="exp-location">📍 US Emb
     </span>
   </h6>
 </div>
-
-
-
   </div>
 </section>
-
-
-
-
-<script>
- document.addEventListener('DOMContentLoaded', function() {
-  const carouselImages = document.querySelectorAll('.carousel-img');
-  let currentIndex = 0;
-  const intervalTime = 3000;
-
-  function nextImage() {
-    carouselImages[currentIndex].classList.remove('active');
-    currentIndex = (currentIndex + 1) % carouselImages.length;
-    setTimeout(() => {
-      carouselImages[currentIndex].classList.add('active');
-    }, 50);
-  }
-
-  carouselImages[0].classList.add('active');
-  let carouselInterval = setInterval(nextImage, intervalTime);
-
-  const carousel = document.querySelector('.carousel');
-  carousel.addEventListener('mouseenter', () => {
-    clearInterval(carouselInterval);
-  });
-  
-  carousel.addEventListener('mouseleave', () => {
-    carouselInterval = setInterval(nextImage, intervalTime);
-  });
-});
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -453,7 +374,7 @@ For me, it’s both—and I will try again.<div class="exp-location">📍 US Emb
       <h3>Connect</h3>
       <div class="social-icons">
         <a href="https://www.facebook.com/rishi.khanal.12764"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="https://github.com/Rishi-C0de"><i class="fab fa-github"></i></a>
         <a href="https://www.linkedin.com/in/rishi-khanal-827736357?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin-in"></i></a>
         <a href="https://www.instagram.com/rishikhanal.ur?igsh=a2VwNG5zdWFxbG54"><i class="fab fa-instagram"></i></a>
       </div>
@@ -465,12 +386,6 @@ For me, it’s both—and I will try again.<div class="exp-location">📍 US Emb
     <p>&copy; 2025 Rishi Khanal. All rights reserved.</p>
   </div>
 </footer>
-
-
-
-
-
-
 
 </body>
 </html>
