@@ -76,7 +76,7 @@ header {
 }
 
 .nav-menu a {
-    color: white;
+    color:white;
     font-size: 1.5rem;
     text-decoration: none;
     transition: all 0.3s ease;
@@ -88,7 +88,6 @@ header {
 .nav-menu a:hover {
     color: orange;
     border-color: orange;
-    
 
 }
 
@@ -115,23 +114,25 @@ header {
     
     .nav-menu {
         position: fixed;
-        top: 0;
+        top: -18%;
         right: -100%;
         width: 70%;
         height: 100vh;
-        background-color: transparent;
+        background-color:transparent;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 2rem;
         transition: all 0.5s ease;
-        padding-top: 80px;
-        border-left: 2px white;
+        padding-top: 10px;
+        border-left: 4px white;
+        border-radius: 5px white;
     }
     
     .nav-menu.active {
         right: 0;
     }
+    
     
     /* Hamburger to X animation */
     .menu-toggle.active .bar:nth-child(1) {
@@ -200,38 +201,44 @@ header {
     max-width: 400px;
     min-width: 250px;
     border-radius: 50%;
-    box-shadow: 0 0 25px whitesmoke;
+    box-shadow: 0 0 25px;
     cursor: pointer;
     transition: transform 0.3s ease;
 }
 
 .home-img img:hover {
     transform: scale(1.05);
+    box-shadow: 0 0 30px whitesmoke ;
 }
 
 .social-icons {
-    margin: 2rem 0;
+  margin: 1rem 0;
 }
 
 .social-icons a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 4rem;
-    height: 4rem;
-    background: white;
-    border: 0.2rem solid black;
-    font-size: 2rem;
-    border-radius: 50%;
-    margin-right: 1.5rem;
-    color: black;
-    transition: all 0.3s ease;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  background: black;
+  font-size: 2rem;
+  border-radius: 100%;
+  margin-right: 0.5rem;
+  color: white;
+  transition: all 0.3s ease;
 }
 
 .social-icons a:hover {
-    transform: scale(1.2) translateY(-5px);
-    box-shadow: 0 0 15px white;
+  transform: scale(1.2) translateY(-5px);
+  color: #fa8e04;
 }
+
+
+
+
+
+
 
 .btn, .btn1 {
     display: inline-block;
@@ -473,6 +480,46 @@ header {
   border-radius: 16px;
   box-shadow: 0 0 10px #fa8e04;
 }
+
+/* Progress Line Container */
+.progress-line {
+  height: 7px;
+  margin-top: 10px;
+  border-radius: 10px;
+  position: relative;
+  background-color: #ccc;
+  overflow: hidden;
+  font-size: 7px;
+  text-align: right;
+  color: black;
+  padding-right: 10px;
+  line-height: 10px;
+}
+
+/* Filled part of progress bar */
+.progress-fill {
+  height: 100%;
+  border-radius: 10px 0 0 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10px;
+  font-weight: bold;
+  font-style: italic;
+
+}
+
+
+.progress-html { width: 90%; background-color: #f39c12; }
+.progress-css { width: 70%; background-color: #f39c12; }
+.progress-js { width: 50%; background-color: #f39c12; }
+.progress-php { width: 35%; background-color: #f39c12; }
+.progress-mysql { width: 30%; background-color: #f39c12; }
+.progress-python { width: 40%; background-color: #f39c12; }
+
 
 
 
@@ -1259,11 +1306,25 @@ header {
   margin-top: 10px;
 }
 
-.footer-social a {
-  color: black; /* Updated from black to white for visibility */
-  font-size: 1.8rem;
-  transition: color 0.3s ease;
+.footer-social .social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  background: black;
+  font-size: 2rem;
+  border-radius: 50%;
+  color: white;
+  transition: all 0.3s ease;
+  text-decoration: none;
 }
+
+.footer-social .social-icons a:hover {
+  transform: scale(1.2) translateY(-5px);
+  color: #fa8e04;
+}
+
 
 
 .footer-bottom {
