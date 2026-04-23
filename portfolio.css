@@ -546,6 +546,32 @@ main,
   align-content: center;
   gap: 16px;
 }
+.about-more {
+  display: none;
+}
+
+.about-text.expanded .about-more {
+  display: grid;
+  gap: 16px;
+}
+
+.toggle-btn {
+  width: fit-content;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 1.3rem;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 180ms ease;
+}
+
+.toggle-btn:hover {
+  opacity: 1;
+}
+
 
 .motto {
   color: var(--text) !important;
@@ -612,34 +638,14 @@ main,
 .info-card {
   min-height: 156px;
 }
-.info-card-wide {
-  grid-column: 1 / -1;
+
+.contact-inline-socials {
+   grid-column: 1 / -1;
+   justify-content: center;
+   margin: 6px 0 0;
 }
 
-.contact-socials {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 10px;
-}
 
-.contact-socials a {
-  display: grid;
-  place-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.02);
-  font-size: 1.45rem;
-  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
-}
-
-.contact-socials a:hover {
-  transform: translateY(-2px);
-  border-color: var(--border-strong);
-  background: rgba(255, 255, 255, 0.06);
-}
 
 .site-footer {
   padding: 28px 0 40px;
