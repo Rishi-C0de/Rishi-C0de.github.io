@@ -268,8 +268,8 @@ main,
 }
 
 .btn-solid {
-  background: #f2f2f2;
-  color: #090909;
+  background: transparent;
+  color: white;
 }
 
 .btn-outline {
