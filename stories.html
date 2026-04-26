@@ -4,11 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stories | Rishi Khanal</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600&display=swap">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap">
   <link rel="stylesheet" href="writing.css">
 </head>
 <body>
   <div class="background-grid"></div>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
   <div class="page-shell">
     <header class="topbar">
       <a href="index.html#writings" class="back-link">Back to Writings</a>
@@ -16,36 +21,162 @@
     </header>
 
     <section class="hero">
-      <p class="eyebrow">Stories</p>
-      <h1>Stories from memory, feeling, and life.</h1>
-      <p>
-        This space holds personal stories, fragments of memory, emotional moments, and real
-        experiences shaped into narrative form.
-      </p>
+      <div class="hero-copy">
+        <p class="eyebrow">Stories</p>
+        <h1>Stories shaped by memory, movement, silence, and imagination.</h1>
+        <p class="hero-text">
+          This page now holds both lived stories and imaginative reflections. Some pieces rise from
+          real experience, while others stretch feeling into atmosphere, image, and inner vision.
+        </p>
+      </div>
+
+      <div class="hero-note">
+        <p class="note-label">What lives here</p>
+        <p>
+          Personal narratives, reflective storytelling, emotional memory, quiet symbolism, and
+          imagination written with the same intimate voice.
+        </p>
+      </div>
+    </section>
+
+    <section class="section-intro">
+      <p class="section-kicker">Inside this page</p>
+      <div class="chip-row">
+        <span class="chip">Memory</span>
+        <span class="chip">Family</span>
+        <span class="chip">Resilience</span>
+        <span class="chip">Self-discovery</span>
+        <span class="chip">Imagination</span>
+        <span class="chip">Atmosphere</span>
+      </div>
     </section>
 
     <section class="entries">
-      <article class="entry">
+       <article class="entry featured-entry entry-split entry-split-right">
+        <p class="entry-tag">Featured Reflection</p>
+        <h2>Every meaningful story begins where comfort ends.</h2>
+         <figure class="entry-media media-wide media-soft-frame">
+          <img src="assets/stories-memory.svg" alt="Black and white illustration of a road fading into distant hills.">
+        </figure>
+        <p>
+          I do not write stories only to remember events. I write to understand how those events
+          shaped the person I became. A place, a departure, a silence, or a wound can remain in
+          the heart for years, and writing gives those memories a voice.
+        </p>
+      </article>
+
+      <article class="entry entry-split entry-split-left">
         <p class="entry-tag">Story 01</p>
         <h2>The Road That Changed Me</h2>
+         <figure class="entry-media media-portrait media-shadow-frame">
+          <img src="assets/stories-road.svg" alt="Black and white illustration of a long road beneath a wide sky.">
+        </figure>
         <p>
-          Some roads are simple paths between two places. Others divide life into before and
-          after. The road my family took to Chandrauta was meant to lead us toward safety and
-          opportunity, but life had its own plans. Even now, when I think back, I feel how
-          deeply place and memory can shape a person.
+          Some roads only connect one place to another. Others divide life into before and after.
+          The road my family took toward Chandrauta carried more than distance. It carried grief,
+          uncertainty, and the fragile hope that life could still rebuild itself after violence
+          had already changed everything.
+        </p>
+        <p>
+          I was young, but the emotional weight of that movement remained with me. A new place
+          meant new people, new routines, and a new version of myself trying to grow through loss.
+          Looking back, I understand that the road did not just take us somewhere else. It began
+          the long process of remaking my inner world.
+        </p>
+        <p>
+          Even now, when I think about travel, I do not think only about direction. I think about
+          the invisible things a person carries while moving forward. That road taught me that
+          survival is not always loud. Sometimes it is simply continuing.
         </p>
       </article>
 
       <article class="entry">
         <p class="entry-tag">Story 02</p>
         <h2>What Silence Taught Me</h2>
+          <figure class="entry-media media-square media-inset-frame">
+          <img src="assets/stories-silence.svg" alt="Black and white illustration of a quiet window and a single chair.">
+        </figure>
         <p>
-          There were years when I said less than I felt. But silence also became a teacher. It
-          taught me observation, patience, and the ability to carry storms without showing them
-          to the world. In that quiet, I learned how inner strength is built.
+          There were years when I spoke less than I felt. From the outside, that silence may have
+          looked ordinary, but inside it was full of thought, pressure, and questions I had not
+          yet learned how to express. I carried many things quietly because that was the only way
+          I knew how.
+        </p>
+        <p>
+          Over time, silence became more than absence. It became a teacher. It taught me how to
+          observe people carefully, how to sense what words often hide, and how to remain steady
+          even when my emotions were unsettled. In quietness, I developed patience and endurance.
+        </p>
+        <p>
+          I eventually learned that silence should not become a prison, but I also learned not to
+          underestimate its power. Some of the deepest strength in my life was built in seasons
+          when no one could see the full struggle.
+        </p>
+      </article>
+
+       <article class="entry featured-entry entry-split entry-split-left">
+        <p class="entry-tag">Imagination Within Story</p>
+        <h2>Some stories are true in event. Others are true in feeling.</h2>
+        <figure class="entry-media media-wide media-soft-frame">
+          <img src="assets/imagination-atmosphere.svg" alt="Black and white abstract illustration of layered dreamlike forms.">
+        </figure>
+        <p>
+          Imagination belongs here because not every important truth can be told only through facts.
+          Sometimes feeling asks for symbols, rooms, cities, and unreal scenes to express what the
+          heart already knows. In that sense, imagination is not separate from story. It is another
+          way of telling it.
+        </p>
+      </article>
+
+       <article class="entry entry-split entry-split-right" id="silence-city">
+        <p class="entry-tag">Imagination 01</p>
+        <h2>If Silence Had a City</h2>
+         <figure class="entry-media media-tall media-shadow-frame">
+          <img src="assets/imagination-city.svg" alt="Black and white illustration of a silent city skyline.">
+        </figure>
+        <p>
+          I imagine a city where noise cannot survive. Every street is made of reflection, every
+          window remembers a face, and every building seems constructed from stillness rather than
+          stone. In that city, people would speak only when words were worthy of staying.
+        </p>
+        <p>
+          There would be no chaos there, only depth. Footsteps would sound like thought. Air would
+          feel heavy with untold stories. The city would not punish silence. It would honor it as a
+          language of its own.
+        </p>
+        <p>
+          Perhaps I imagine that place because the world often rewards noise too quickly. A city of
+          silence would remind us that not everything valuable needs to compete to be heard.
+        </p>
+      </article>
+
+      <article class="entry" id="lost-dreams">
+        <p class="entry-tag">Imagination 02</p>
+        <h2>The Room Where Lost Dreams Wait</h2>
+         <figure class="entry-media media-wide media-inset-frame">
+          <img src="assets/imagination-room.svg" alt="Black and white illustration of a quiet room with suspended lights.">
+        </figure>
+        <p>
+          Somewhere beyond the visible world, I imagine a room where forgotten dreams sit quietly.
+          They are not dead. They are simply waiting, folded into corners of light, patient enough
+          to survive the years their owners spent doubting themselves.
+        </p>
+        <p>
+          Each dream has a different shape. Some still glow with ambition. Some are dimmed by fear.
+          Some carry the dust of delay. But none of them vanish completely. They remain there, almost
+          breathing, until someone returns with more courage than hesitation.
+        </p>
+        <p>
+          I like to believe that every person has a room like this somewhere in the unseen part of
+          life. Not to shame them for what was postponed, but to remind them that what matters can
+          still be called back into motion.
         </p>
       </article>
     </section>
+
+    <nav class="page-nav">
+      <a href="poems.html">Next: Poems and Quotes</a>
+    </nav>
 
     <p class="page-footer">&copy; 2026 Rishi Khanal</p>
   </div>
