@@ -368,6 +368,10 @@ main,
   font-size: clamp(2.8rem, 5vw, 4rem);
   line-height: 1;
 }
+.blog-image{
+  border-radius: 18px;
+ 
+}
 
 .education-list,
 .craft-grid,
