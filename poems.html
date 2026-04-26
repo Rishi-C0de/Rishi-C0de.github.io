@@ -4,11 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Poems and Quotes | Rishi Khanal</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600&display=swap">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap">
   <link rel="stylesheet" href="writing.css">
 </head>
 <body>
   <div class="background-grid"></div>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
   <div class="page-shell">
     <header class="topbar">
       <a href="index.html#writings" class="back-link">Back to Writings</a>
@@ -16,33 +21,113 @@
     </header>
 
     <section class="hero">
-      <p class="eyebrow">Poems and Quotes</p>
-      <h1>Lines shaped by emotion, silence, and reflection.</h1>
-      <p>
-        A quiet space for poems, quotes, and short pieces written from feeling, memory, love,
-        loss, and hope.
-      </p>
+      <div class="hero-copy">
+        <p class="eyebrow">Poems and Quotes</p>
+        <h1>Short lines carrying emotion, longing, discipline, and reflection.</h1>
+        <p class="hero-text">
+          This page holds compact writing with a quiet voice: poems, reflective fragments, and
+          personal lines that come from memory, struggle, hope, love, and inner resolve.
+        </p>
+      </div>
+
+      <div class="hero-note">
+        <p class="note-label">Writing mood</p>
+        <p>
+          Minimal, intimate, and direct. These pieces are brief in length but meant to leave a
+          lingering emotional weight.
+        </p>
+      </div>
+    </section>
+
+    <section class="section-intro">
+      <p class="section-kicker">Forms on this page</p>
+      <div class="chip-row">
+        <span class="chip">Poetry</span>
+        <span class="chip">Quotes</span>
+        <span class="chip">Reflection</span>
+        <span class="chip">Inner voice</span>
+      </div>
     </section>
 
     <section class="entries">
-      <article class="entry">
-        <p class="entry-tag">Poem</p>
-        <h2>Beyond Limits</h2>
-        <blockquote>
-          I was not shaped by comfort,<br>
-          I was shaped by fire.<br>
-          And still I chose to become light.
-        </blockquote>
+       <article class="entry featured-entry entry-split entry-split-right">
+        <p class="entry-tag">Featured Note</p>
+        <h2>Not every truth needs a long paragraph. Some arrive as a single line.</h2>
+         <figure class="entry-media media-wide media-soft-frame">
+          <img src="assets/poems-ink.svg" alt="Black and white illustration of flowing ink lines across a page.">
+        </figure>
+        <p>
+          I write short pieces when a feeling is too clear to be hidden and too delicate to be
+          buried under too many words. Poetry allows emotion to stay honest.
+        </p>
       </article>
 
       <article class="entry">
+        <p class="entry-tag">Poem</p>
+        <h2>Beyond Limits</h2>
+         <figure class="entry-media media-square media-stack-frame media-float-right">
+          <img src="assets/poems-firelight.svg" alt="Black and white illustration of a rising flame turning into light.">
+        </figure>
+         <div class="note-card">
+          <p class="note-card-label">Poem Note</p>
+          <blockquote>
+            I was not shaped by comfort,<br>
+            I was shaped by fire.<br>
+            And still I chose<br>
+            not to become ash,<br>
+            but light.
+          </blockquote>
+        </div>
+        <p>
+          This poem speaks to endurance. It reflects the belief that hardship does not have to
+          harden the heart. It can also deepen clarity and purpose.
+        </p>
+      </article>
+
+      <article class="entry entry-split entry-split-left">
         <p class="entry-tag">Quote</p>
-        <h2>A line I live by</h2>
-        <blockquote>
-          The deepest strength is often built in the places where no one sees the struggle.
-        </blockquote>
+        <h2>A Line I Live By</h2>
+         <figure class="entry-media media-portrait media-shadow-frame">
+          <img src="assets/poems-strength.svg" alt="Black and white illustration of a person standing in shadow with light behind.">
+        </figure>
+         </blockquote>
+        <div class="note-card">
+          <p class="note-card-label">Quote Note</p>
+          <blockquote>
+            The deepest strength is often built in the places where no one sees the struggle.
+          </blockquote>
+        </div>
+        <p>
+          I return to this line because much of personal growth happens quietly. Recognition may
+          come later, but character is often built long before anyone notices it.
+        </p>
+      </article>
+
+       <article class="entry entry-split entry-split-right">
+        <p class="entry-tag">Reflection</p>
+        <h2>When Hope Stays</h2>
+        <figure class="entry-media media-round media-soft-frame">
+          <img src="assets/poems-hope.svg" alt="Black and white illustration of a small light glowing in darkness.">
+        </figure>
+        <div class="note-card">
+          <p class="note-card-label">Reflection Note</p>
+          <blockquote>
+            Hope does not always arrive loudly.<br>
+            Sometimes it survives as one small reason<br>
+            to keep walking.
+          </blockquote>
+        </div>
+        <p>
+          This piece reflects the kind of hope that remains even during uncertain seasons. Not the
+          dramatic kind, but the kind that quietly keeps a person moving forward.
+        </p>
       </article>
     </section>
+
+    <nav class="page-nav">
+      <a href="stories.html">Previous: Stories</a>
+      <a href="experience.html">Next: Experience</a>
+    </nav>
 
     <p class="page-footer">&copy; 2026 Rishi Khanal</p>
   </div>
