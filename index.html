@@ -7,14 +7,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600&display=swap">
   <link rel="stylesheet" href="portfolio.css">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-73G3EDNY0C"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-73G3EDNY0C');
-</script>
-
+          <script
+            src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+            async
+            defer>
+          </script>
 </head>
 <body>
   <div class="background-grid"></div>
@@ -268,6 +265,18 @@
           </article>
 
           <article class="blog-card tilt-card reveal">
+            <p class="blog-tag">Travel Notes</p>
+             <h3>Journeys & Places</h3>
+             <p>
+                Personal travel experiences, observations, landscapes,
+                cultures, and moments collected along the road.
+             </p>
+               <a href="travel.html" class="blog-link">
+                  Explore Travel Notes
+               </a>
+           </article>
+
+          <article class="blog-card tilt-card reveal">
             <p class="blog-tag">Poems & Quotes</p>
             <h3>Poems and Quotes</h3>
             <p>
@@ -276,6 +285,8 @@
             </p>
             <a href="poems.html" class="blog-link">Read poems</a>
           </article>
+
+          
 
           <article class="blog-card tilt-card reveal">
             <p class="blog-tag">Experience</p>
@@ -295,20 +306,77 @@
         <p class="eyebrow">Contact</p>
         <h2>Let's connect</h2>
       </div>
+           <div class="hidden-field">
 
+                <input
+                    type="text"
+                    name="_honey"
+                    tabindex="-1"
+                    autocomplete="off">
+
+             </div>
+             
       <div class="contact-layout">
-        <form class="contact-form tilt-card reveal" action="https://formsubmit.co/ajax/rishikhanal1927@gmail.com" method="POST">
+        <form class="contact-form tilt-card reveal" action="https://formsubmit.co/ajax/rishikhanal1927@gmail.com" method="POST" novalidate>
           <input type="hidden" name="_subject" value="New portfolio message from rishikhanal18.com.np">
           <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_captcha" value="true">
+          
           <div class="form-row">
-            <input type="text" name="name" placeholder="Your name" required>
-            <input type="email" name="email" placeholder="Your email" required>
+            <div class="form-control">
+              <input
+                  id="name"
+                  type="text"
+                  name="name" 
+                  placeholder="Your name"
+                  required
+                  aria-describedby="name-error">
+              <span class="field-msg" id="name-error" aria-live="polite"></span>
+            </div>
+            
+            <div class="form-control">
+              <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  placeholder="Your email"
+                  required
+                  aria-describedby="email-error">
+              <span class="field-msg" id="email-error" aria-live="polite"></span>
+            </div>
           </div>
-          <input type="tel" name="phone" placeholder="Phone number" required>
-          <textarea name="message" rows="5" placeholder="Your message" required></textarea>
-          <button type="submit" class="btn btn-solid contact-submit">Send Message</button>
-          <p class="form-status" aria-live="polite"></p>
+          
+          <div class="form-control">
+            <input
+                 id="phone"
+                 type="tel"
+                 name="phone"
+                 placeholder="Phone number"
+                 required
+                 aria-describedby="phone-error">
+            <span class="field-msg" id="phone-error" aria-live="polite"></span>
+          </div>
+          
+          <div class="form-control">
+            <textarea
+                   id="message"
+                   name="message"
+                   rows="5"
+                   placeholder="Your message"
+                   maxlength="500"
+                   required
+                   aria-describedby="message-error counter-display">
+             </textarea>
+            <span class="field-msg" id="message-error" aria-live="polite"></span>
+            <div class="counter-container">
+              <span id="counter-display" class="char-counter">0 / 500</span>
+            </div>
+          </div>
+          
+          <button type="submit" class="btn btn-solid contact-submit">
+            <span class="btn-text">Send Message</span>
+            <span class="spinner" aria-hidden="true"></span>
+          </button>
         </form>
 
         <div class="contact-cards">
@@ -320,7 +388,7 @@
           <article class="info-card tilt-card reveal">
             <i class="fa-solid fa-envelope"></i>
             <h3>Email</h3>
-            <a href="mailto:"></a>
+            <a href="mailto:rishikhanal1927@gmail.com">rishikhanal1927@gmail.com</a>
           </article>
           <article class="info-card tilt-card reveal">
             <i class="fa-brands fa-whatsapp"></i>
