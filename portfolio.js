@@ -1,11 +1,40 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // 1. Force visibility instantly so elements show up no matter what
+  try {
+    initScrollReveal();
+  } catch (e) { console.error("Reveal Error:", e); }
+
+  // 2. Initialize your original features
+  try {
+    initNavigation();
+  } catch (e) { console.error("Nav Error:", e); }
+
+  try {
+    initTypingLoop();
+  } catch (e) { console.error("Typing Error:", e); }
+  
+  // 3. Initialize upgraded form validations
+  try {
+    initContactForm();
+  } catch (e) { console.error("Form Error:", e); }
+});
+
+/**
+ * Force everything to show up immediately
+ */
+function initScrollReveal() {
+  const reveals = document.querySelectorAll(".reveal");
+  reveals.forEach(el => {
+    el.classList.add("is-visible");
+  });
+}
+
+/**
+ * Handles Mobile Menu and Navigation (Your Original Logic)
+ */
+function initNavigation() {
   const menuToggle = document.querySelector(".menu-toggle");
   const navMenu = document.querySelector(".nav-menu");
-  const typingTarget = document.querySelector(".typing-text span");
-  const galleryImages = document.querySelectorAll(".gallery-image");
-  const contactForm = document.querySelector(".contact-form");
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const words = ["student", "developer", "designer", "learner"];
 
   if (menuToggle && navMenu) {
     menuToggle.addEventListener("click", () => {
@@ -20,14 +49,21 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+}
 
+/**
+ * Controls the typing animation (Your Original Logic)
+ */
+function initTypingLoop() {
+  const typingTarget = document.querySelector(".typing-text span");
+  if (!typingTarget) return;
+
+  const words = ["student", "developer", "designer", "learner"];
   let wordIndex = 0;
   let charIndex = 0;
   let deleting = false;
 
   function typeLoop() {
-    if (!typingTarget) return;
-
     const currentWord = words[wordIndex];
     charIndex += deleting ? -1 : 1;
     typingTarget.textContent = currentWord.slice(0, charIndex);
@@ -42,107 +78,144 @@ document.addEventListener("DOMContentLoaded", () => {
       wordIndex = (wordIndex + 1) % words.length;
       timeout = 240;
     }
-
-    window.setTimeout(typeLoop, timeout);
+    setTimeout(typeLoop, timeout);
   }
-
   typeLoop();
+}
 
-  if (galleryImages.length > 0 && !prefersReducedMotion) {
-    let activeIndex = 0;
-    window.setInterval(() => {
-      galleryImages[activeIndex].classList.remove("active");
-      activeIndex = (activeIndex + 1) % galleryImages.length;
-      galleryImages[activeIndex].classList.add("active");
-    }, 3400);
-  }
+/**
+ * Upgraded Form Controls with Debounced Validation, Live Counters & Toasts
+ */
+function initContactForm() {
+  const form = document.querySelector(".contact-form");
+  if (!form) return;
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-      }
-    });
-  }, { threshold: 0.14 });
+  const inputs = form.querySelectorAll("input, textarea");
+  const textarea = form.querySelector("#message");
+  const counterDisplay = form.querySelector("#counter-display");
 
-  document.querySelectorAll(".reveal").forEach((item) => observer.observe(item));
-
-  if (!prefersReducedMotion) {
-    document.querySelectorAll(".tilt-card").forEach((card) => {
-      card.addEventListener("pointermove", (event) => {
-        const rect = card.getBoundingClientRect();
-        const x = (event.clientX - rect.left) / rect.width;
-        const y = (event.clientY - rect.top) / rect.height;
-        const rotateY = (x - 0.5) * 8;
-        const rotateX = (0.5 - y) * 8;
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-2px)`;
-      });
-
-      card.addEventListener("pointerleave", () => {
-        card.style.transform = "";
-      });
-    });
-  }
-
-  document.querySelectorAll(".exp-box .toggle-btn").forEach((button) => {
-    button.addEventListener("click", () => {
-      const card = button.closest(".exp-box");
-      if (!card) return;
-
-      card.classList.toggle("expanded");
-      button.textContent = card.classList.contains("expanded") ? "Read Less" : "Read More";
-    });
+  inputs.forEach(input => {
+    if (input.name === "_honey" || input.type === "hidden") return;
+    input.addEventListener("input", debounce(() => {
+      validateField(input);
+    }, 400));
   });
 
-  const aboutToggle = document.querySelector(".about-toggle");
-  if (aboutToggle) {
-    aboutToggle.addEventListener("click", () => {
-      const aboutText = aboutToggle.closest(".about-text");
-      if (!aboutText) return;
-
-      aboutText.classList.toggle("expanded");
-      aboutToggle.textContent = aboutText.classList.contains("expanded") ? "Read Less" : "Read More";
+  if (textarea && counterDisplay) {
+    textarea.addEventListener("input", () => {
+      const length = textarea.value.length;
+      counterDisplay.textContent = `${length} / 500`;
+      counterDisplay.classList.toggle("warning", length >= 400 && length < 500);
+      counterDisplay.classList.toggle("maxed", length >= 500);
     });
   }
 
-  if (contactForm) {
-    const submitButton = contactForm.querySelector(".contact-submit");
-    const status = contactForm.querySelector(".form-status");
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    let isFormValid = true;
 
-    contactForm.addEventListener("submit", async (event) => {
-      event.preventDefault();
-
-      if (!submitButton || !status) return;
-
-      status.textContent = "Sending message...";
-      status.classList.remove("is-success", "is-error");
-      submitButton.disabled = true;
-      submitButton.textContent = "Sending...";
-
-      try {
-        const formData = new FormData(contactForm);
-        const response = await fetch(contactForm.action, {
-          method: "POST",
-          headers: {
-            Accept: "application/json"
-          },
-          body: formData
-        });
-
-        if (!response.ok) {
-          throw new Error("Request failed");
-        }
-
-        status.textContent = "Message sent successfully. I'll get back to you soon.";
-        status.classList.add("is-success");
-        contactForm.reset();
-      } catch (error) {
-        status.textContent = "Message could not be sent right now. Please try again in a moment.";
-        status.classList.add("is-error");
-      } finally {
-        submitButton.disabled = false;
-        submitButton.textContent = "Send Message";
-      }
+    inputs.forEach(input => {
+      if (input.name === "_honey" || input.type === "hidden") return;
+      if (!validateField(input)) isFormValid = false;
     });
+
+    if (!isFormValid) {
+      showToast("Please correct the validation errors.", "error", "fa-exclamation-circle");
+      return;
+    }
+
+    await sendFormData(form);
+  });
+}
+
+function validateField(input) {
+  const container = input.closest(".form-control");
+  if (!container) return true; 
+
+  const errorStringEl = container.querySelector(".field-msg");
+  let isValid = true;
+  let msg = "";
+
+  if (input.required && !input.value.trim()) {
+    isValid = false;
+    msg = "This field cannot be left blank.";
+  } else if (input.type === "email" && input.value.trim()) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(input.value.trim())) {
+      isValid = false;
+      msg = "Please type a valid email layout.";
+    }
   }
-});
+
+  if (!isValid) {
+    container.classList.add("is-invalid");
+    container.classList.remove("is-valid");
+    if (errorStringEl) errorStringEl.textContent = msg;
+  } else {
+    container.classList.remove("is-invalid");
+    container.classList.add("is-valid");
+    if (errorStringEl) errorStringEl.textContent = "";
+  }
+
+  return isValid;
+}
+
+async function sendFormData(form) {
+  const submitBtn = form.querySelector(".contact-submit");
+  if (!submitBtn) return;
+  
+  const btnText = submitBtn.querySelector(".btn-text");
+  const formData = new FormData(form);
+
+  try {
+    submitBtn.classList.add("is-loading");
+    if (btnText) btnText.textContent = "Sending...";
+
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      showToast("Success! Your message was submitted.", "success", "fa-check-circle");
+      form.reset();
+      form.querySelectorAll(".form-control").forEach(c => c.classList.remove("is-valid"));
+    } else {
+      throw new Error();
+    }
+  } catch (err) {
+    showToast("Transmission failure.", "error", "fa-wifi");
+  } finally {
+    submitBtn.classList.remove("is-loading");
+    if (btnText) btnText.textContent = "Send Message";
+  }
+}
+
+function showToast(message, type = "success", iconClass = "fa-check-circle") {
+  let container = document.getElementById("toast-container");
+  if (!container) {
+    container = document.createElement("div");
+    container.id = "toast-container";
+    container.className = "toast-container";
+    document.body.appendChild(container);
+  }
+
+  const toast = document.createElement("div");
+  toast.className = `toast toast-${type}`;
+  toast.innerHTML = `<i class="fa-solid ${iconClass}"></i><span>${message}</span>`;
+  container.appendChild(toast);
+
+  setTimeout(() => {
+    toast.classList.add("fade-out");
+    toast.addEventListener("transitionend", () => toast.remove());
+  }, 4000);
+}
+
+function debounce(func, delay) {
+  let timeoutId;
+  return (...args) => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => func.apply(this, args), delay);
+  };
+}
